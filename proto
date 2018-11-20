@@ -24,8 +24,8 @@
   var page = event.target;
 
   if (page.id === 'page1') {
-    page.querySelector('#push-button').onclick = function() {
-      document.querySelector('#myNavigator').pushPage('page2.html', {data: {title: 'Page 2'}});
+    page.querySelector('#push-button1').onclick = function() {
+      document.querySelector('#firstPage').pushPage('page2.html', {data: {title: 'Page 2'}});
     };
   } else if (page.id === 'page2') {
       document.querySelector('input').addEventListener('change', ev => {
@@ -98,7 +98,7 @@
   })
   </script>
     
-  <ons-navigator swipeable id="myNavigator" page="page1.html"></ons-navigator>
+  <ons-navigator swipeable id="firstPage" page="page1.html"></ons-navigator>
 
   <template id="page1.html">
   <ons-page id="page1">
@@ -108,7 +108,7 @@
 
     <p>これはMVPです。</p>
 
-    <ons-button id="push-button">OCRを使う</ons-button>
+    <ons-button id="push-button1">OCRを使う</ons-button>
   </ons-page>
   </template>
 
@@ -116,23 +116,23 @@
   <ons-page id="page2">
     <ons-toolbar>
       <div class="left"><ons-back-button>戻る</ons-back-button></div>
-      <div class="center"></div>
+      <div class="center">OCR</div>
     </ons-toolbar>
     <img style="max-width: 400px;"><input type="file" accept="image/*" />
       <pre id="contents"></pre>
     </ons-page>
   </template>
-</body>
-</html>
 
-  <template id="page3.html">
-  <ons-page id="page3">
+  <template id ="page3.html">
+  <ons-page id = "page3">
     <ons-toolbar>
       <div class="left"><ons-back-button>戻る</ons-back-button></div>
       <div class="center"></div>
     </ons-toolbar>
-    
+      <p>ここに結果画面が入ります</p>
+
     </ons-page>
   </template>
 </body>
 </html>
+
