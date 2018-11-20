@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -28,6 +29,8 @@
       document.querySelector('#firstPage').pushPage('page2.html', {data: {title: 'Page 2'}});
     };
   } else if (page.id === 'page2') {
+    page.querySelector('#push-button2').onclick = function() {
+      document.querySelector('#resultPage').pushPage('page3.html', {data: {title: 'Page 3'}});
       document.querySelector('input').addEventListener('change', ev => {
         if (!ev.target.files || ev.target.files.length == 0) return;
         Promise.resolve(ev.target.files[0])
@@ -94,7 +97,7 @@
         "アスパルテーム" : "・サッカリンとも。アスパルテームは、人工甘味料の一つです。",
 
         "亜硝酸ナトリウム" : "・亜硝酸ナトリウムには非常に強い毒性、急性症状として嘔吐やチアノーゼ、動悸、血圧降下などの症状がある。",
-      }}
+      }}}
   })
   </script>
     
@@ -120,6 +123,9 @@
     </ons-toolbar>
     <img style="max-width: 400px;"><input type="file" accept="image/*" />
       <pre id="contents"></pre>
+      <ons-button id="push-button2">結果画面へ</ons-button>
+      <div id="resultPage"></div>
+      
     </ons-page>
   </template>
 
@@ -135,4 +141,3 @@
   </template>
 </body>
 </html>
-
