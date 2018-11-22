@@ -83,20 +83,24 @@
         let result = [];
         Object.keys(description).forEach(function (key) {
           if (text.match(key)) {
-            result.push(description[key])
+            result.push(description[1])
           }
         });
         return result
       };
-      const description = {
-        "デキストリン" : "・デキストリンとはいい感じかも",
-
-        "乳清たんぱく濃縮物" : "・乳清たんぱく濃縮物は栄養素っぽいやつ",
-
-        "アスパルテーム" : "・サッカリンとも。アスパルテームは、人工甘味料の一つです。",
-
-        "亜硝酸ナトリウム" : "・亜硝酸ナトリウムには非常に強い毒性、急性症状として嘔吐やチアノーゼ、動悸、血圧降下などの症状がある。",
-      }}}
+      const description = [{
+        'name' : 'デキストリン', 'description' : '・デキストリンは健康に問題ありません。', 'state' : 'Good'
+      },
+      {
+        'name' : 'アスパルテーム', 'description' : '・アスパルテームは、非常に強い毒性を有しています。', 'state' : 'Bad'
+      },
+      {
+        'name' : '乳清たんぱく濃縮物', 'description' : '・乳清たんぱく濃縮物は栄養素のようなものです。', 'state' : 'Good'
+      },
+      {
+        'name' : '亜硝酸ナトリウム', 'description' : '亜硝酸ナトリウムには非常に強い毒性、急性症状として嘔吐やチアノーゼ、動悸、血圧降下などの症状がある。', 'state' : 'Bad'
+      }]
+      }}
   })
   </script>
     
